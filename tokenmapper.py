@@ -7,8 +7,7 @@ for line in sys.stdin:
     x = json.loads(line)
     try:
         y = x['text']
-
-        y = line.strip()
+        y = x.strip()
         tokens = y.split()
         for token in tokens:
             print("%s\t%s" % (token, 1))
