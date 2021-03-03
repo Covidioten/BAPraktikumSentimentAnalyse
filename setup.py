@@ -19,6 +19,5 @@ setup(
     author='Christoph Koenning',
     author_email='chris@casualcompany.de',
     url='https://github.com/Covidioten/BAPraktikumSentimentAnalyse',
-    license=license,
     packages=find_packages(exclude=('tests', 'docs'))
 )
