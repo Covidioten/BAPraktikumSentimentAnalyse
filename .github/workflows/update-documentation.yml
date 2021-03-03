@@ -1,0 +1,24 @@
+name: Update Documentation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Deploy newest 
+        run: |
+          cd docs
+          git init
+          git add .
+          git commit -m "updating documentation"
+          git push origin master https://github.com/Covidioten/BAPraktikumSentimentAnalyse.wiki.git -f
