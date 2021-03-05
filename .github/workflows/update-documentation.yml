@@ -23,4 +23,5 @@ jobs:
           git init
           git add .
           git commit -m "updating documentation"
-          git push origin master https://github.com/Covidioten/BAPraktikumSentimentAnalyse.wiki.git -f
+          git push https://github.com/Covidioten/BAPraktikumSentimentAnalyse.wiki.git master -f
+          
