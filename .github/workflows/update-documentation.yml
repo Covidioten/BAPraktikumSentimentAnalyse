@@ -19,6 +19,7 @@ jobs:
         run: |
           git config --global user.email "chris@casualcompany.de"
           git config --global user.name "ProdIsMyDev"
+          cp README.md docs/Home.md
           cd docs
           git init
           git add .
