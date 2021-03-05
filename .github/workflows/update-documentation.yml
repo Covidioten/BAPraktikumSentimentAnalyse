@@ -17,6 +17,8 @@ jobs:
 
       - name: Deploy newest 
         run: |
+          git config --global user.email "chris@casualcompany.de"
+          git config --global user.name "ProdIsMyDev"
           cd docs
           git init
           git add .
