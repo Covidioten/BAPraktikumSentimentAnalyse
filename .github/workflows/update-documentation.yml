@@ -23,6 +23,5 @@ jobs:
           git init
           git add .
           git commit -m "updating documentation"
-          git remote add origin https://ProdIsMyDev:${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}@github.com/[ORGANISATION]/[REPO].git
+          git remote add origin https://ProdIsMyDev:${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}@github.com/Covidioten/BAPraktikumSentimentAnalyse.wiki.git
           git push origin master -f
-          
