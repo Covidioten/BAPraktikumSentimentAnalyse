@@ -23,5 +23,6 @@ jobs:
           git init
           git add .
           git commit -m "updating documentation"
-          git push https://github.com/Covidioten/BAPraktikumSentimentAnalyse.wiki.git master -f
+          git remote set-url origin https://ProdIsMyDev:${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}@github.com/[ORGANISATION]/[REPO].git
+          git push origin master -f
           
