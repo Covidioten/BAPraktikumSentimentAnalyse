@@ -1,4 +1,4 @@
-# Introduction and Goals!!!11!!!1!!1elf!!!
+# Introduction and Goals
 
 [comment]: <> (Motivation und Ziel Hinterlegen)
 
