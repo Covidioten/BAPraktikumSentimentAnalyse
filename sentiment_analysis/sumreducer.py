@@ -3,6 +3,8 @@ import sys
 from textblob_de import TextBlobDE as TextBlob
 import nltk
 nltk.download('punkt')
+nltk.data.path.append("../nltk_data/tokenizers/")
+
 
 (last_date, sum) = (None, 0)
 temp_string = ""
