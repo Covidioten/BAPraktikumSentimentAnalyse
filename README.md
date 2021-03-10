@@ -90,3 +90,4 @@ Die Daten für diese Rechnung werden ebenfalls übergeben.
 # Solution Strategy
 
 [comment]: <> (Wie wird das Projekt umgesetzt)
+Das Projekt wird durch die Verwendung einer Sentimentanalyse umgesetzt. Hierzu wird sich primär auf die Programmiersprache Python gestützt (u.a. zur Implementation des WebServers). Da viele Daten umzusetzen sind, wird ein Clustering mit Hadoop durchgeführt.
