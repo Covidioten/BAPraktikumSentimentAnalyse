@@ -1,4 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 import sys
 import json
 import re
@@ -26,7 +28,7 @@ def search_data(kw_array, text):
             - false: none of the keywords are in the text
     '''
     for entry in kw_array:
-        if re.search(entry, text, re.IGNORECASE):
+        if re.search(entry, str(text), re.IGNORECASE):
             return True
 
     return False
@@ -34,9 +36,10 @@ def search_data(kw_array, text):
 
 
 for line in sys.stdin:
-    items = json.loads(line)
+
     try:
 
+        items = json.loads(line)
         # ["created_at"]
         # ["id"]
         # ["text"]
@@ -46,8 +49,10 @@ for line in sys.stdin:
         # ["entities"]["hashtags"][<index>]["text"]
         # ["lang"]
 
-        location = str(items["user"]['location'])
-        text = str(items["text"])
+        location = items["user"]['location']
+        location= location.encode('utf-8')
+        text = items["text"]
+        text = text.encode('utf-8')
         time = datetime.datetime.strptime(items["created_at"], "%a %b %d %H:%M:%S +0000 %Y")
         tweet_id = items["id"]
 
@@ -57,10 +62,11 @@ for line in sys.stdin:
         #      könnte Beispielsweise auch in einem anderen Kontext vorkommen
         #    - Länder analog "DE" für Deutschland könnte auch für etwas anderes stehen
         # check if user has specified a city in the set of the 20 most populated german cities
-
+        #
         if search_data(city_arr, location) | search_data(land_arr, location) | search_data(bland_arr, location):
-            # if search_data(context_arr, text):
-            print("%s\t%s\t%s\t%s\t%s" %  (tweet_id, time.date(), 1, time.time(), text))
+            if search_data(context_arr, text):
+                print("%s\t%s\t%s\t%s\t%s" %  (time.date(), 1, tweet_id, time.time(), text))
 
-    except KeyError:
+
+    except (KeyError, AttributeError, ValueError):
         pass
