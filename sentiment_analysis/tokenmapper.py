@@ -17,7 +17,8 @@ bland_arr = ["Baden-Württemberg", "Bayern", "Brandenburg", "Hessen",
 
 land_arr = ["Germany", "Deutschland"]
 
-context_arr = ["lockdown", "covid", "corona"]
+context_arr = ["lockdown", "covid", "corona", "shutdown", "rki", "robert koch institut",
+                "drosten", "covid-19", "sars cov 2", "sars cov-2", "sars cov"]
 
 def search_data(kw_array, text):
     '''
@@ -41,9 +42,6 @@ for line in sys.stdin:
 
         items = json.loads(line)
         # ["created_at"]
-        # ["id"]
-        # ["text"]
-        # ["user"]["location"]
         # ["user"]["id"]
         # ["geo"]
         # ["entities"]["hashtags"][<index>]["text"]
