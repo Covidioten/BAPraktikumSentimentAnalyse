@@ -65,4 +65,4 @@ if last_date:
     else:
         avg_daily_sent = daily_senti_sum / float(adj_tweet)
 
-    print( "{'%s':{'total':'%s', 'adj_post': '%s', 'sentiment':'%s', 'data':{ %s}}}" % (last_date, sum, adj_tweet, round(avg_daily_sent,3), sum_string))
+    print( "{'%s':{'total':'%s', 'date':'%s' 'adj_post': '%s', 'sentiment':'%s', 'data':{ %s}}}," % (last_date, sum, adj_tweet, round(avg_daily_sent,3), sum_string))
