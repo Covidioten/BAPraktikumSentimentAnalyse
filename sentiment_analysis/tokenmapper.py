@@ -63,9 +63,12 @@ for line in sys.stdin:
         #    - Länder analog "DE" für Deutschland könnte auch für etwas anderes stehen
         # check if user has specified a city in the set of the 20 most populated german cities
         #
-        if search_data(city_arr, location) | search_data(land_arr, location) | search_data(bland_arr, location):
-            if search_data(context_arr, text):
-                print("%s\t%s\t%s\t%s\t%s" %  (time.date(), 1, tweet_id, time.time(), text))
+        # if search_data(city_arr, location) | search_data(land_arr, location) | search_data(bland_arr, location):
+        #     if search_data(context_arr, text):
+        #     print("%s\t%s\t%s\t%s\t%s" %  (time.date(), 1, tweet_id, time.time(), text))
+
+
+        print("%s\t%s\t%s\t%s\t%s" %  (time.date(), 1, tweet_id, time.time(), text))
 
 
     except (KeyError, AttributeError, ValueError):
