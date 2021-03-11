@@ -1,43 +1,68 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+
 import sys
 from textblob_de import TextBlobDE as TextBlob
 import nltk
-nltk.download('punkt')
-nltk.data.path.append("../nltk_data/tokenizers/")
 
+avg_daily_sent = 0.0
+
+def calcAvg():
+    if adj_tweet < 1:
+        avg_daily_sent = daily_senti_sum / (adj_tweet + 1)
+        # print('avg daily sum ' + str(avg_daily_sent))
+    else:
+        avg_daily_sent = daily_senti_sum / float(adj_tweet)
+        # print('avg daily sum ' + str(avg_daily_sent))
 
 (last_date, sum) = (None, 0)
-temp_string = ""
-counter = 0
-(last_id, last_time, last_text, last_senti, last_avg_senti) = (0, None, None, None, None)
+#adjusted daily senti
+adj_tweet = 0
+
 sum_string = ""
-print("{'root':[")
+daily_senti_sum = 0
+# print("{'root':[")
 
 for line in sys.stdin:
     try:
-        (id, date, val, time, text) = line.strip().split("\t")
+        (date, val, id, time, text) = line.strip().split("\t")
         senti = TextBlob(text)
-        avg_senti = TextBlob(text)
-
-
 
         if last_date and last_date != date:
-            print( "{'%s':{'total':'%s', 'sentiment':'%s', 'data':{ %s}}}," % (last_date, sum, avg_senti.sentiment.polarity, sum_string))
+            if adj_tweet < 1:
+                avg_daily_sent = daily_senti_sum / (adj_tweet + 1)
+
+            else:
+                avg_daily_sent = daily_senti_sum / float(adj_tweet)
+                # print('avg daily sum ' + str(avg_daily_sent))
+            print( "{'%s':{'total':'%s', 'adj_post': '%s',  'sentiment':'%s', 'data':{ %s}}}," % (last_date, sum, adj_tweet, round(avg_daily_sent,3), sum_string))
+            daily_senti_sum = 0
             sum_string = "'%s':{'%s':'%s'}" % (id, time, senti.sentiment.polarity)
             (last_date, sum) = (date, int(val))
+            if senti.sentiment.polarity != 0.0:
+                adj_tweet += 1
+            daily_senti_sum += senti.sentiment.polarity
 
         elif last_date:
             sum_string += ",'%s':{'%s':'%s'}" % (id, time, senti.sentiment.polarity)
             (last_date, sum) = (date, sum+int(val))
-            # (last_id, last_time, last_senti, sum_string) = (id, time, senti, )
+            daily_senti_sum += senti.sentiment.polarity
+            if senti.sentiment.polarity != 0.0:
+                adj_tweet += 1
+
         else:
             sum_string += "'%s':{'%s':'%s'}" % (id, time, senti.sentiment.polarity)
             (last_date, sum) = (date, sum+int(val))
-            # (last_id, last_time, last_senti, sum_string) = (id, time, senti, )
+            daily_senti_sum += senti.sentiment.polarity
+            if senti.sentiment.polarity != 0.0:
+                adj_tweet += 1
+
     except ValueError:
         pass
 
 if last_date:
-    print( "{'%s':{'total':'%s', 'sentiment':'%s', 'data':{ %s}}}" % (last_date, sum, avg_senti.sentiment.polarity, sum_string))
-    # print("}}")
-    print("]}")
+    if adj_tweet < 1:
+        avg_daily_sent = daily_senti_sum / (float(adj_tweet + 1))
+    else:
+        avg_daily_sent = daily_senti_sum / float(adj_tweet)
+
+    print( "{'%s':{'total':'%s', 'adj_post': '%s', 'sentiment':'%s', 'data':{ %s}}}" % (last_date, sum, adj_tweet, round(avg_daily_sent,3), sum_string))
