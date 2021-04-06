@@ -41,6 +41,9 @@ for line in sys.stdin:
     try:
 
         items = json.loads(line)
+
+        # possible relevat JSON keys:
+
         # ["created_at"]
         # ["user"]["id"]
         # ["geo"]
@@ -54,7 +57,7 @@ for line in sys.stdin:
         time = datetime.datetime.strptime(items["created_at"], "%a %b %d %H:%M:%S +0000 %Y")
         tweet_id = items["id"]
 
-        # folgende annahmen werden getroffen:
+        # folgende Annahmen werden getroffen:
         #    - ein Bundesland kann nur dann richtig erkannt werden wenn es
         #      ausgeschrieben wurde, "MV" als Abkürzung für Mecklenburg Vorpommern
         #      könnte Beispielsweise auch in einem anderen Kontext vorkommen

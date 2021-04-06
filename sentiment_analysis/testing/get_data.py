@@ -2,23 +2,64 @@ import json
 import re
 
 with open("../output/sentiment.txt", "r", encoding="utf-8") as file:
-    file = '{"root":[' + file.read() + ']}'
 
-    # file = file.replace("'", '"')
-    # file = file.replace("}}}}", '}}}},')
+    text = file.read()
+    # print(int(len(text)-1))
+    endIndex = int(len(text) - 1)
+
+    text = text[0 : endIndex]
+
+
+    text = '{"root":[' + text + ']}'
+
+    text = text.replace("'", '"')
+
+    text = re.sub(r'\s+', '', text)
+    text = text.strip()
+
+    arr = []
+    # digit_arr = []
+    arr = re.findall('\d\d\d\d-\d\d-\d\d', text)
+    print(sorted(arr))
+
+
+
+    # digit_arr = []
+    # for entry in arr:
+    #     digit_arr.append(int(re.findall('\d+', entry)[0]))
     #
-    # file = re.sub(r'\s+', '',file)
+    # print(sum(digit_arr))
+
+    # for entry in digit_arr[0]:
+    #     entry = int(entry)
+
+    # for entry in digit_arr[0]:
+    #     digit_arr = map(int, entry)
     #
-    # json = json.loads(file).decode("utf-8")
+    # print(sum(digit_arr))
+
+    # arr = map(int, arr)
+
+    # for entry in
+
+
+    #
+    # json = json.loads(text).decode("utf-8")
     #
     # print(json[0]["sentiment"])
 
-    i = 0
-    for element in file:
-        if i < 4702:
-            print(element, end='')
-            # if i == 4693:
-            # print("!!!")
-            i += 1
-        else:
-            break
+    # i = 0
+    # for element in text:
+    #     if i == 178430:
+    #         print(element)
+    #         i += 1
+    #     if i == 1784331:
+    #         print(element)
+    #         # if i == 4693:
+    #         # print("!!!")
+    #         i += 1
+    #
+    #     if i == 178433:
+    #         break
+    #
+    #     i += 1
