@@ -36,10 +36,11 @@ for line in sys.stdin:
             # edge case where there is only a single tweet with a sentiment score to avoid dividing by zero
             # calculate the average sentiment for a day
             if adj_tweet < 1:
-                avg_daily_sent = daily_senti_sum / (adj_tweet + 1)  # cant we just set this to 0 ???
+                avg_daily_sent = daily_senti_sum / (adj_tweet + 1)
             else:
                 avg_daily_sent = daily_senti_sum / float(adj_tweet)
-
+                
+            
             # generates the final json string for a day
             print( '{"%s":{"date":"%s", "total":"%s", "adj_post": "%s",  "sentiment":"%s", "data":{ %s}}},' % (last_date, last_date, sum, last_date, adj_tweet, round(avg_daily_sent,3), sum_string))
 
