@@ -16,7 +16,7 @@
 |  | \
 |  |__input \
 | \
-|__tests \
+|__tests
 
 
 
