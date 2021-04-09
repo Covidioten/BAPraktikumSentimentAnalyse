@@ -7,7 +7,7 @@ import unittest
 
 
 class BasicTestSuite(unittest.TestCase):
-    """Test polarity of sentance"""
+    """Test polarity of sentence"""
 
     def test_sentence_with_positive_sentiment(self):
         self.assertGreater(sentiment_analysis.get_sentiment_of_string(
