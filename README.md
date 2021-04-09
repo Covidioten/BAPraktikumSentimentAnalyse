@@ -11,10 +11,10 @@
 |__example \
 | \
 |__sentiment_analysis \
-|   | \
-|   |__testing \
-|   | \
-|   |__input \
+|  | \
+|  |__testing \
+|  | \
+|  |__input \
 | \
 |__tests \
 
