@@ -9,14 +9,14 @@
 # Repo Structure
 
 |__example \
-|
-|__sentiment_analysis
-|   |
-|   |__testing
-|   |
-|   |__input
-|
-|__tests
+| \
+|__sentiment_analysis \
+|   | \
+|   |__testing \
+|   | \
+|   |__input \
+| \
+|__tests \
 
 
 
