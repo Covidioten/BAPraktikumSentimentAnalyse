@@ -12,8 +12,10 @@ Requierements:
 - the instructions assume that a Hadoop Cluster has been setup up already and is not covered here
 
 Instructions:
-- navigate into sentiment_analysis
+- navigate into sentiment_analysis  
 <code>cd sentiment_analysis</code>
+- start hadoop job  
+<code>hadoop jar /path/to/streaming/jar/hadoop-streaming.jar -files path7to/tokenmapper/tokenmapper.py,path/to/sumreducer/pathreducer.py -mapper path/to/tokenmapper/tokenmapper.py -reducer /path/to/sumreducer/sumreducer.py -input /path/to/dataset -output path/to/output </code>
 
 # Repo Structure
 
