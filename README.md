@@ -44,7 +44,7 @@ tests:
 # Architecture Constraints
 
 [comment]: <> (Weitere Randbedingungen sammeln)
-Es sollte Hadoop verwendet werden
+Hadoop should be used
 
 # System Scope and Context
 
@@ -52,8 +52,8 @@ Es sollte Hadoop verwendet werden
 
 ## Business Context
 
-Politische Entscheidungen haben Einfluss auf die Stimmungslage des Landes.
-Um das zu bestätigen, werden politische Aussagen mit der Stimmungslagen der jeweiligen Tage in Verbindung gesetzt.
+Political decisions have an influence on the sentiment of a country
+To research the impact of these decisions on the sentiment we analyze the correlation between the calculated sentiment and political statements and actions.
 
 „Sie glauben gar nicht, wenn man jeden Tag direkt neben Angela Merkel am Tisch sitzt, verliert man alle Eigenschaften eines bayerischen Löwen. Man wird wirklich zahm.“ (CSU-Chef Horst Seehofer am 12. Januar nach den Sondierungsgesprächen beim Neujahrsempfang der bayerischen Staatsregierung in der Münchner Residenz.)
 Quelle: neuepresse.de
@@ -65,9 +65,9 @@ Quelle: neuepresse.de
 
 ## Technical Context
 
-Die Ergebnisdatei enthält die polarity für jeden Tag.
-Die Tages polarity errechnet sich aus dem Schnitt aller polarity Werte für einen Tag.
-Die Daten für diese Rechnung werden ebenfalls übergeben.
+The result file contains the polarity für each day.
+The daily polarity is calculated by taking the average over each day
+The data for these calculations is included in the structure aswell
 
 | Bundesland | Polarity |
 | ---------- | -------- |
@@ -125,4 +125,5 @@ Die Daten für diese Rechnung werden ebenfalls übergeben.
 # Solution Strategy
 
 [comment]: <> (Wie wird das Projekt umgesetzt)
-Das Projekt wird durch die Verwendung einer Sentimentanalyse umgesetzt. Hierzu wird sich primär auf die Programmiersprache Python gestützt (u.a. zur Implementation des WebServers). Da viele Daten umzusetzen sind, wird ein Clustering mit Hadoop durchgeführt.
+
+The project goals are achived by utilizing sentiment analysis. Python will be the language to implement the neccessary functionality. Because of the huge amount of data to analyze the calculations are run on a hadoop cluster.
