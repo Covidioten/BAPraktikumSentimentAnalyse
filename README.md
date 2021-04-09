@@ -8,7 +8,7 @@
 
 # Repo Structure
 
-|__example \nl
+|__example \
 |
 |__sentiment_analysis
 |   |
