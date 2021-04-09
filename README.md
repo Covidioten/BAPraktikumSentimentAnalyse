@@ -14,7 +14,7 @@
 |  | \
 |  |__testing \
 |  | \
-|  |__input \
+|  |__output \
 | \
 |__tests
 
