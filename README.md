@@ -6,6 +6,15 @@
 
 [comment]: <> (Was soll geleistet werden)
 
+# Execution instructions
+
+Requierements:
+- the instructions assume that a Hadoop Cluster has been setup up already and is not covered here
+
+Instructions:
+- navigate into sentiment_analysis
+<code>cd sentiment_analysis</code>
+
 # Repo Structure
 
 |__example \
