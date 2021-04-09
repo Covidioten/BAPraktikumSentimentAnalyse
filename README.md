@@ -19,15 +19,25 @@ Instructions:
 
 # Repo Structure
 
-|__example \
-| \
-|__sentiment_analysis \
-|  | \
-|  |__testing \
-|  | \
-|  |__output \
-| \
-|__tests
+example:  
+- contains minimum tokenmapper and sumreducer to get started with  
+
+sentiment_analysis:  
+- testing: contains files that were used to test the map/reduce proccess on small amount of data
+- output: the output folder of the map/reduce process
+
+tests:  
+- unit tests for the sentiment analysis
+
+|__example  
+|  
+|__sentiment_analysis  
+|  |  
+|  |__testing  
+|  |  
+|  |__output  
+|  
+|__tests  
 
 
 
