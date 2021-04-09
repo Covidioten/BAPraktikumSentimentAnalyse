@@ -6,6 +6,20 @@
 
 [comment]: <> (Was soll geleistet werden)
 
+# Repo Structure
+
+|__example
+|
+|__sentiment_analysis
+|   |
+|   |__testing
+|   |
+|   |__input
+|
+|__tests
+
+
+
 # Architecture Constraints
 
 [comment]: <> (Weitere Randbedingungen sammeln)
