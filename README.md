@@ -5,13 +5,13 @@ This is only the repository where the data analysis is stored. For the Frontend 
 The Webserver Backend is stored in [this repository](https://github.com/Covidioten/WebServer).
 
 # Table of Contens
-* [Requirements Overview](#Requirements Overview)
+* [Requirements Overview](#Requirements-Overview)
 * [Technologies](#technologies)
-* [Execution instructions](#Execution instructions)
-* [Repo Structure](#Repo structure)
-* [Architecture Contraints](#Architecture Contraints)
-* [System Scope and Context](#System Scope and Context)
-* [Solution Strategy](#Solution Strategy)
+* [Execution instructions](#Execution-instructions)
+* [Repo Structure](#Repo-structure)
+* [Architecture Contraints](#Architecture-Contraints)
+* [System Scope and Context](#System-Scope-and-Context)
+* [Solution Strategy](#Solution-Strategy)
 
 ## Requirements Overview
 
