@@ -26,7 +26,7 @@ Instructions:
 - navigate into sentiment_analysis  
 <code>cd sentiment_analysis</code>
 - start hadoop job  
-<code>hadoop jar /path/to/streaming/jar/hadoop-streaming.jar -files /path/to/tokenmapper/tokenmapper.py,path/to/sumreducer/pathreducer.py -mapper /path/to/tokenmapper/tokenmapper.py -reducer /path/to/sumreducer/sumreducer.py -input /path/to/dataset -output /path/to/output </code>
+<code>hadoop jar /path/to/streaming/jar/hadoop-streaming.jar -files /path/to/tokenmapper/tokenmapper.py,path/to/sumreducer/sumreducer.py -mapper /path/to/tokenmapper/tokenmapper.py -reducer /path/to/sumreducer/sumreducer.py -input /path/to/dataset -output /path/to/output </code>
 
 # Repo Structure
 
