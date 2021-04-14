@@ -30,7 +30,9 @@ Instructions:
 
 Testing:
 - navigate into tests  
-''' python test_sentiment.py '''
+<code>cd tests</code>
+- execute test script
+- <code>python test_sentiment_analysis.py</code>
 
 # Repo Structure
 
