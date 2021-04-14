@@ -28,6 +28,10 @@ Instructions:
 - start hadoop job  
 <code>hadoop jar /path/to/streaming/jar/hadoop-streaming.jar -files /path/to/tokenmapper/tokenmapper.py,path/to/sumreducer/sumreducer.py -mapper /path/to/tokenmapper/tokenmapper.py -reducer /path/to/sumreducer/sumreducer.py -input /path/to/dataset -output /path/to/output </code>
 
+Testing:
+- navigate into tests  
+''' python test_sentiment.py '''
+
 # Repo Structure
 
 example:  
