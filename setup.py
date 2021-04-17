@@ -18,3 +18,4 @@ setup(
     url='https://github.com/Covidioten/BAPraktikumSentimentAnalyse',
     packages=find_packages(exclude=('tests', 'docs'))
 )
+ 
