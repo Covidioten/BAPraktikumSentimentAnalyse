@@ -84,7 +84,7 @@ Quelle: neuepresse.de
 
 The result file contains the polarity für each day.
 The daily polarity is calculated by taking the average over each day
-The data for these calculations is included in the structure aswell
+The data for these calculations is included in the structure aswell.
 
 | day | Polarity |
 | ---------- | -------- |
