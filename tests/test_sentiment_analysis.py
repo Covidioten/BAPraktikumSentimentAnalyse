@@ -17,7 +17,7 @@ class BasicTestSuite(unittest.TestCase):
         self.assertLess(sentiment_analysis.get_sentiment_of_string(
         "Der Lockdown ist nicht gut"), 0)
         
-    def test_sentence_with_negative_sentiment(self):
+    def test_sentence_with_neutral_sentiment(self):
         self.assertEqual(sentiment_analysis.get_sentiment_of_string(
         "Das ist eine Tür"), 0)
 
