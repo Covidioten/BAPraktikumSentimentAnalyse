@@ -28,11 +28,15 @@ Instructions:
 - start hadoop job  
 <code>hadoop jar /path/to/streaming/jar/hadoop-streaming.jar -files /path/to/tokenmapper/tokenmapper.py,path/to/sumreducer/sumreducer.py -mapper /path/to/tokenmapper/tokenmapper.py -reducer /path/to/sumreducer/sumreducer.py -input /path/to/dataset -output /path/to/output </code>
 
+Install package:
+```
+pip setup.py install
+```
+
 Testing:
-- navigate into tests  
-<code>cd tests</code>
-- execute test script
-- <code>python test_sentiment_analysis.py</code>
+```
+pytest
+```
 
 # Repo Structure
 
